@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dmitry</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --accent-color: #aaaaaa;
+      --section-padding: 60px;
+      --max-content-width: 1000px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg-color); color: var(--text-color); font-family: Arial, sans-serif; line-height: 1.6; }
+    header { text-align: center; padding: var(--section-padding) 20px; }
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--accent-color); }
+    header p { font-size: 1.2rem; }
+    .section { padding: var(--section-padding) 20px; max-width: var(--max-content-width); margin: 0 auto; }
+    .stack-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+      width: 100%;
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+    }
+    .stack-icons .icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--accent-color);
+      flex: 0 0 auto;
+    }
+    .stack-icons .icon i,
+    .stack-icons .icon img {
+      font-size: 3rem;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 5px;
+    }
+    .experience-item { margin-bottom: 20px; }
+    .experience-item h3 { font-size: 1.3rem; color: var(--accent-color); margin-bottom: 5px; }
+    .experience-item span { font-style: italic; font-size: 0.9rem; display: block; margin-bottom: 10px; }
+    .experience-item p { margin-bottom: 10px; }
+    .experience-item ul { margin-left: 20px; list-style: disc; margin-bottom: 15px; }
+    .experience-item ul li { margin-bottom: 8px; }
+    .contact-list { list-style: none; display: flex; flex-direction: column; align-items: flex-start; gap: 15px; margin-top: 20px; }
+    .contact-list li a { color: var(--text-color); text-decoration: none; transition: color 0.3s; }
+    .contact-list li a i { margin-right: 8px; }
+    .contact-list li a:hover { color: var(--accent-color); }
+  </style>
+</head>
+<body>
+    <header>
+    <h1>Дмитрий Мурыгин</h1>
+    <p>Backend Developer: Python & GoLang</p>
+  </header>
+
+  <section id="about" class="section">
+    <h2>Обо мне</h2>
+    <p>Специализируюсь на бэкенд-разработке с использованием Python и GoLang: создаю и поддерживаю API, провожу нагрузочное тестирование и развёртываю сервисы. Стремлюсь упрощать процессы и оптимизировать взаимодействие с базами данных, предлагая практичные решения для команды и бизнеса.</p>
+    <p>Отличаюсь внимательностью к деталям, ответственным подходом и желанием постоянно развиваться как специалист: всегда ищу новые знания и технологии для улучшения качества решений.</p>
+  </section>
+
+  <section id="tech-stack" class="section">
+    <h2>Технологический стек</h2>
+    <div class="stack-icons">
+      <div class="icon"><i class="fab fa-python"></i><span>Python</span></div>
+      <div class="icon"><i class="fab fa-golang"></i><span>GoLang</span></div>
+      <div class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/redis.svg" alt="Redis" style="filter: invert(100%);" /><span>Redis</span></div>
+      <div class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postgresql.svg" alt="PostgreSQL" style="filter: invert(100%);" /><span>PostgreSQL</span></div>
+      <div class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachekafka.svg" alt="Kafka" style="filter: invert(100%);" /><span>Kafka</span></div>
+      <div class="icon"><i class="fas fa-code"></i><span>Asyncio</span></div>
+      <div class="icon"><i class="fas fa-bolt"></i><span>FastAPI</span></div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <h2>Опыт работы</h2>
+    <div class="experience-item">
+      <h3>Ponches</h3>
+      <span>2021 &ndash; 2024</span>
+      <p>Разработка API для внутренних ПО, проведение тестирования и развертывание сервисов; улучшение производительности и отказоустойчивости.</p>
+      <ul>
+        <li>Сократил среднее время обработки заявки менеджером на 50%, снизив нагрузку на команду и ускорив обслуживание клиента.</li>
+        <li>Повысил пропускную способность команды менеджеров на 40% за счёт автоматизации рутинных процессов и унификации шаблонов задач</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <h3>Algorithm</h3>
+      <span>2024 &ndash; настоящее время</span>
+      <p>Создание API, разработка MVP-ботов и инструментов для клиентов (преимущественно бизнесов); обеспечение стабильной интеграции и сопровождение проектов.</p>
+      <ul>
+        <li>Разработал AI-юриста для автоматизации подготовки документов, сократив время на подготовку стандартных договоров на 70% и уменьшив количество ошибок на 30%.</li>
+        <li>Внедрил AI-консультанта и квалификатор лидов, увеличив скорость обработки входящих лидов на 50% и повысив конверсию на 20%.</li>
+        <li>Создал систему автоматических ответов службы поддержки на основе базы знаний, снизив нагрузку отдела на обработку типовых запросов.</li>
+        <li>Разработал голосового ассистента для постановки и контроля задач, сократив ручное создание задач на 90% и увеличив соблюдение сроков выполнения на 20%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Контакты</h2>
+    <ul class="contact-list">
+      <li><a href="mailto:dmitr.murygin@gmail.com"><i class="fas fa-envelope"></i>Email: dmitr.murygin@gmail.com</a></li>
+      <li><a href="https://github.com/DimaRQ" target="_blank"><i class="fab fa-github"></i>GitHub: DimaRQ</a></li>
+      <li><a href="https://t.me/JustIdiotCat" target="_blank"><i class="fab fa-telegram"></i>Telegram: @JustIdiotCat</a></li>
+    </ul>
+  </section>
+</body>
+</html>
