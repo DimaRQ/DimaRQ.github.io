@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dmitry</title>
+  <title>Дмитрий Мурыгин</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -18,22 +18,56 @@
     header { text-align: center; padding: var(--section-padding) 20px; }
     header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--accent-color); }
     header p { font-size: 1.2rem; }
+
     .section { padding: var(--section-padding) 20px; max-width: var(--max-content-width); margin: 0 auto; }
-    .stack-icons {
+
+    .card {
+      background: #1e1e1e;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    #intro-tech .cards-wrapper {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
       gap: 20px;
+    }
+    #intro-tech .cards-wrapper .card {
+      flex: 1 1 calc(50% - 20px);
+    }
+    #intro-tech .card h2 { margin-top: 0; color: var(--accent-color); }
+
+    /* Стили заголовков секций с картинкой */
+    #experience h2, #pet-projects h2 {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      background: #1e1e1e;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stack-icons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
       width: 100%;
-      max-width: var(--max-content-width);
-      margin: 0 auto;
     }
     .stack-icons .icon {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       color: var(--accent-color);
-      flex: 0 0 auto;
+      padding: 10px 0;
     }
     .stack-icons .icon i,
     .stack-icons .icon img {
@@ -42,12 +76,23 @@
       height: 48px;
       margin-bottom: 5px;
     }
-    .experience-item { margin-bottom: 20px; }
-    .experience-item h3 { font-size: 1.3rem; color: var(--accent-color); margin-bottom: 5px; }
-    .experience-item span { font-style: italic; font-size: 0.9rem; display: block; margin-bottom: 10px; }
-    .experience-item p { margin-bottom: 10px; }
-    .experience-item ul { margin-left: 20px; list-style: disc; margin-bottom: 15px; }
+
+    #pet-projects h3 { font-size: 1.6rem; color: var(--accent-color); margin-bottom: 10px; }
+    #pet-projects h3 a {
+      color: var(--accent-color);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    #pet-projects h3 a:hover {
+      color: var(--text-color);
+      border-color: var(--accent-color);
+    }
+
+    .experience-item span { font-style: italic; font-size: 0.9rem; display: block; margin: 10px 0; }
+    .experience-item ul { margin-left: 20px; list-style: disc; }
     .experience-item ul li { margin-bottom: 8px; }
+
     .contact-list { list-style: none; display: flex; flex-direction: column; align-items: flex-start; gap: 15px; margin-top: 20px; }
     .contact-list li a { color: var(--text-color); text-decoration: none; transition: color 0.3s; }
     .contact-list li a i { margin-right: 8px; }
@@ -55,51 +100,70 @@
   </style>
 </head>
 <body>
-    <header>
+  <header>
     <h1>Дмитрий Мурыгин</h1>
-    <p>Backend Developer: Python & GoLang</p>
+    <p>Backend Developer: Python</p>
   </header>
 
-  <section id="about" class="section">
-    <h2>Обо мне</h2>
-    <p>Специализируюсь на бэкенд-разработке с использованием Python и GoLang: создаю и поддерживаю API, провожу нагрузочное тестирование и развёртываю сервисы. Стремлюсь упрощать процессы и оптимизировать взаимодействие с базами данных, предлагая практичные решения для команды и бизнеса.</p>
-    <p>Отличаюсь внимательностью к деталям, ответственным подходом и желанием постоянно развиваться как специалист: всегда ищу новые знания и технологии для улучшения качества решений.</p>
-  </section>
-
-  <section id="tech-stack" class="section">
-    <h2>Технологический стек</h2>
-    <div class="stack-icons">
-      <div class="icon"><i class="fab fa-python"></i><span>Python</span></div>
-      <div class="icon"><i class="fab fa-golang"></i><span>GoLang</span></div>
-      <div class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/redis.svg" alt="Redis" style="filter: invert(100%);" /><span>Redis</span></div>
-      <div class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postgresql.svg" alt="PostgreSQL" style="filter: invert(100%);" /><span>PostgreSQL</span></div>
-      <div class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachekafka.svg" alt="Kafka" style="filter: invert(100%);" /><span>Kafka</span></div>
-      <div class="icon"><i class="fas fa-code"></i><span>Asyncio</span></div>
-      <div class="icon"><i class="fas fa-bolt"></i><span>FastAPI</span></div>
+  <section id="intro-tech" class="section">
+    <div class="cards-wrapper">
+      <div class="card">
+        <h2>Обо мне</h2>
+        <p>Специализируюсь на бэкенд-разработке с использованием Python: создаю и поддерживаю API, провожу нагрузочное тестирование и развёртываю сервисы. Стремлюсь упрощать процессы и оптимизировать взаимодействие с базами данных, предлагая практичные решения для команды и бизнеса.</p>
+        <p>Отличаюсь внимательностью к деталям, ответственным подходом и желанием постоянно развиваться как специалист: всегда ищу новые знания и технологии для улучшения качества решений.</p>
+      </div>
+      <div class="card">
+        <h2>Технологический стек</h2>
+        <div class="stack-icons">
+          <div class="icon"><i class="fab fa-python"></i><span>Python</span></div>
+          <div class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/redis.svg" alt="Redis" style="filter: invert(100%);" /><span>Redis</span></div>
+          <div class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postgresql.svg" alt="PostgreSQL" style="filter: invert(100%);" /><span>PostgreSQL</span></div>
+          <div class="icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachekafka.svg" alt="Kafka" style="filter: invert(100%);" /><span>Kafka</span></div>
+          <div class="icon"><i class="fas fa-code"></i><span>Asyncio</span></div>
+          <div class="icon"><i class="fas fa-bolt"></i><span>FastAPI</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="experience" class="section">
     <h2>Опыт работы</h2>
     <div class="experience-item">
-      <h3>Ponches</h3>
-      <span>2021 &ndash; 2024</span>
-      <p>Разработка API для внутренних ПО, проведение тестирования и развертывание сервисов; улучшение производительности и отказоустойчивости.</p>
-      <ul>
-        <li>Сократил среднее время обработки заявки менеджером на 50%, снизив нагрузку на команду и ускорив обслуживание клиента.</li>
-        <li>Повысил пропускную способность команды менеджеров на 40% за счёт автоматизации рутинных процессов и унификации шаблонов задач</li>
-      </ul>
+      <div class="card">
+        <h3>Ponches</h3>
+        <span>2021 &ndash; 2024</span>
+        <p>Разработка API для внутренних ПО, проведение тестирования и развертывание сервисов; улучшение производительности и отказоустойчивости.</p>
+        <ul>
+          <li>Сократил среднее время обработки заявки менеджером на 50%, снизив нагрузку на команду и ускорив обслуживание клиента.</li>
+          <li>Повысил пропускную способность команды менеджеров на 40% за счёт автоматизации рутинных процессов и унификации шаблонов задач.</li>
+        </ul>
+      </div>
     </div>
     <div class="experience-item">
-      <h3>Algorithm</h3>
-      <span>2024 &ndash; настоящее время</span>
-      <p>Создание API, разработка MVP-ботов и инструментов для клиентов (преимущественно бизнесов); обеспечение стабильной интеграции и сопровождение проектов.</p>
-      <ul>
-        <li>Разработал AI-юриста для автоматизации подготовки документов, сократив время на подготовку стандартных договоров на 70% и уменьшив количество ошибок на 30%.</li>
-        <li>Внедрил AI-консультанта и квалификатор лидов, увеличив скорость обработки входящих лидов на 50% и повысив конверсию на 20%.</li>
-        <li>Создал систему автоматических ответов службы поддержки на основе базы знаний, снизив нагрузку отдела на обработку типовых запросов.</li>
-        <li>Разработал голосового ассистента для постановки и контроля задач, сократив ручное создание задач на 90% и увеличив соблюдение сроков выполнения на 20%.</li>
-      </ul>
+      <div class="card">
+        <h3>Algorithm</h3>
+        <span>2024 &ndash; настоящее время</span>
+        <p>Создание API, разработка MVP-ботов и инструментов для клиентов; обеспечение стабильной интеграции и сопровождение проектов.</p>
+        <ul>
+          <li>Разработал AI-юриста для автоматизации подготовки документов, сократив время на подготовку стандартных договоров на 70% и уменьшив количество ошибок на 30%.</li>
+          <li>Внедрил AI-консультанта и квалификатор лидов, увеличив скорость обработки входящих лидов на 50% и повысив конверсию на 20%.</li>
+          <li>Создал систему автоматических ответов службы поддержки на основе базы знаний, снизив нагрузку отдела на обработку типовых запросов.</li>
+          <li>Разработал голосового ассистента для постановки и контроля задач, сократив ручное создание задач на 90% и увеличив соблюдение сроков выполнения на 20%.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="pet-projects" class="section">
+    <h2>Pet проекты</h2>
+    <div class="project-item">
+      <div class="card">
+        <h3 class="project-title">
+          <a href="https://github.com/DimaRQ/video-host-api-pet" target="_blank">Video Host API</a>
+        </h3>
+        <p>Минималистичный, полностью асинхронный бэкенд для видео-хостинга, демонстрирующий потоковую обработку медиа, авторизацию JWT и масштабирование с помощью очередей.</p>
+        <p><em>Технологии:</em> FastAPI · Kafka · Redis · PostgreSQL · MinIO (S3) · SQLAlchemy · Docker Compose.</p>
+      </div>
     </div>
   </section>
 
